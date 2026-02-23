@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mauri-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    restart: always
+    networks:
+      - mauri-network
+
+  mauri_dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mauri-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app:cached
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=100
+      - WATCHPACK_POLLING=true
+    command: [ "sh", "-c", "npm install && npm run dev -- --host" ]
+    depends_on:
+      - backend
+    networks:
+      - mauri-network
+networks:
+  mauri-network:
+    driver: bridge
