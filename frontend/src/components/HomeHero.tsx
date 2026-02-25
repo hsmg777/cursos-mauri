@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 export function HomeHero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       <div
@@ -23,11 +26,7 @@ export function HomeHero() {
           transition={{ duration: 0.7 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.05] tracking-wide uppercase"
         >
-          Aprende a capturar
-          <br />
-          la belleza de lo que ves
-          <br />
-          y convertirlo en arte
+          {t("homeHero.title")}
         </motion.h1>
 
         <motion.p
@@ -36,8 +35,7 @@ export function HomeHero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-8 text-base sm:text-lg md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
         >
-          Domina acuarela con cursos pregrabados y talleres en vivo, guiados paso
-          a paso para principiantes y artistas avanzados.
+          {t("homeHero.subtitle")}
         </motion.p>
 
         <motion.div
@@ -51,7 +49,7 @@ export function HomeHero() {
             size="lg"
             className="bg-white text-neutral-900 hover:bg-neutral-100 text-base px-8 h-12"
           >
-            <Link to="/courses">Explorar Cursos</Link>
+            <Link to="/courses">{t("homeHero.explore")}</Link>
           </Button>
           <Button
             asChild
@@ -59,7 +57,7 @@ export function HomeHero() {
             variant="outline"
             className="border-white text-white hover:bg-white/10 text-base px-8 h-12"
           >
-            <Link to="/contact">Contáctame</Link>
+            <Link to="/contact">{t("homeHero.contact")}</Link>
           </Button>
         </motion.div>
       </div>

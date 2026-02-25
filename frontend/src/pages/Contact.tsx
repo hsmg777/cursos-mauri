@@ -29,7 +29,7 @@ export function Contact() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Simulate form submission
-    toast.success("Message sent successfully! We'll get back to you soon.");
+    toast.success("Mensaje enviado con exito. Te responderemos pronto.");
     setFormData({
       name: "",
       email: "",
@@ -68,7 +68,7 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl mb-6 font-light tracking-wide"
           >
-            Let's Talk About Your Next Artistic Step
+            Hablemos de tu siguiente paso artistico
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,7 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed"
           >
-            Contact me for private mentoring, live workshops, or course inquiries
+            Contactame para mentoria privada, talleres en vivo o consultas sobre cursos
           </motion.p>
         </div>
       </section>
@@ -94,11 +94,11 @@ export function Contact() {
               <Card className="border-neutral-200">
                 <CardContent className="p-8">
                   <h2 className="text-3xl mb-6 font-light text-neutral-900">
-                    Send a Message
+                    Envia un Mensaje
                   </h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">Nombre Completo *</Label>
                       <Input
                         id="name"
                         name="name"
@@ -106,12 +106,12 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         className="mt-1"
-                        placeholder="Your name"
+                        placeholder="Tu nombre"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">Correo Electronico *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -125,7 +125,7 @@ export function Contact() {
                     </div>
 
                     <div>
-                      <Label htmlFor="inquiryType">Inquiry Type *</Label>
+                      <Label htmlFor="inquiryType">Tipo de Consulta *</Label>
                       <Select
                         value={formData.inquiryType}
                         onValueChange={(value) =>
@@ -133,23 +133,23 @@ export function Contact() {
                         }
                       >
                         <SelectTrigger className="mt-1">
-                          <SelectValue placeholder="Select inquiry type" />
+                          <SelectValue placeholder="Selecciona el tipo de consulta" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="course">Course Question</SelectItem>
+                          <SelectItem value="course">Consulta de Curso</SelectItem>
                           <SelectItem value="live-class">
-                            Live Class Inquiry
+                            Consulta de Clase en Vivo
                           </SelectItem>
                           <SelectItem value="private-mentoring">
-                            Private Mentoring
+                            Mentoria Privada
                           </SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="other">Otro</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
                     <div>
-                      <Label htmlFor="subject">Subject *</Label>
+                      <Label htmlFor="subject">Asunto *</Label>
                       <Input
                         id="subject"
                         name="subject"
@@ -157,12 +157,12 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         className="mt-1"
-                        placeholder="Brief subject of your message"
+                        placeholder="Asunto breve de tu mensaje"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Message *</Label>
+                      <Label htmlFor="message">Mensaje *</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -170,7 +170,7 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         className="mt-1 min-h-[150px]"
-                        placeholder="Tell me about your inquiry..."
+                        placeholder="Cuentame sobre tu consulta..."
                       />
                     </div>
 
@@ -180,7 +180,7 @@ export function Contact() {
                       className="w-full bg-neutral-900 hover:bg-neutral-800"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      Enviar Mensaje
                     </Button>
                   </form>
                 </CardContent>
@@ -196,12 +196,12 @@ export function Contact() {
             >
               <div>
                 <h2 className="text-3xl mb-6 font-light text-neutral-900">
-                  Get in Touch
+                  Ponte en Contacto
                 </h2>
                 <p className="text-neutral-600 leading-relaxed mb-8">
-                  I'm here to help you on your watercolor journey. Whether you
-                  have questions about courses, want to join a live workshop, or
-                  are interested in private mentoring, I'd love to hear from you.
+                  Estoy aqui para ayudarte en tu camino con la acuarela. Si
+                  tienes preguntas sobre cursos, quieres unirte a un taller en
+                  vivo o te interesa mentoria privada, sera un gusto leerte.
                 </p>
               </div>
 
@@ -211,7 +211,7 @@ export function Contact() {
                     <Mail className="w-5 h-5 text-neutral-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg mb-1 text-neutral-900">Email</h3>
+                    <h3 className="text-lg mb-1 text-neutral-900">Correo</h3>
                     <a
                       href="mailto:hello@maurivirtanen.com"
                       className="text-neutral-600 hover:text-neutral-900 transition-colors"
@@ -226,18 +226,18 @@ export function Contact() {
                     <MapPin className="w-5 h-5 text-neutral-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg mb-1 text-neutral-900">Studio</h3>
+                    <h3 className="text-lg mb-1 text-neutral-900">Estudio</h3>
                     <p className="text-neutral-600">
-                      Helsinki, Finland
+                      Helsinki, Finlandia
                       <br />
-                      (Remote courses available worldwide)
+                      (Cursos remotos disponibles en todo el mundo)
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="pt-8 border-t border-neutral-200">
-                <h3 className="text-lg mb-4 text-neutral-900">Follow Me</h3>
+                <h3 className="text-lg mb-4 text-neutral-900">Sigueme</h3>
                 <div className="flex gap-4">
                   <a
                     href="#"
@@ -267,12 +267,12 @@ export function Contact() {
               <Card className="border-neutral-200 bg-neutral-50">
                 <CardContent className="p-6">
                   <h3 className="text-lg mb-2 text-neutral-900">
-                    Response Time
+                    Tiempo de Respuesta
                   </h3>
                   <p className="text-neutral-600 text-sm leading-relaxed">
-                    I typically respond to inquiries within 24-48 hours. For
-                    urgent matters related to upcoming live workshops, please
-                    mention "Urgent" in your subject line.
+                    Normalmente respondo en un plazo de 24 a 48 horas. Para
+                    temas urgentes relacionados con talleres en vivo, incluye
+                    "Urgente" en el asunto.
                   </p>
                 </CardContent>
               </Card>
@@ -294,7 +294,7 @@ export function Contact() {
               <div className="aspect-[4/3] overflow-hidden rounded-lg">
                 <img
                   src="https://images.unsplash.com/photo-1752649937334-f5c3c2136b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc3QlMjBzdHVkaW8lMjB3b3Jrc3BhY2UlMjBwYWludGluZ3xlbnwxfHx8fDE3NzA2NTUzMjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Private mentoring"
+                  alt="Mentoria privada"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -307,40 +307,39 @@ export function Contact() {
               viewport={{ once: true }}
             >
               <div className="inline-block px-4 py-1 bg-amber-100 text-amber-900 text-xs uppercase tracking-wider rounded-full mb-4">
-                Exclusive Opportunity
+                Oportunidad Exclusiva
               </div>
               <h2 className="text-4xl md:text-5xl mb-6 font-light text-neutral-900">
-                Private Mentoring Available
+                Mentoria Privada Disponible
               </h2>
               <div className="space-y-4 text-neutral-600 leading-relaxed mb-8">
                 <p>
-                  Take your watercolor skills to the next level with personalized
-                  one-on-one guidance tailored to your specific goals and
-                  challenges.
+                  Lleva tus habilidades en acuarela al siguiente nivel con
+                  guia personalizada uno a uno, adaptada a tus metas.
                 </p>
                 <p>
-                  Private mentoring sessions include:
+                  Las sesiones de mentoria privada incluyen:
                 </p>
                 <ul className="space-y-2 ml-5">
                   <li className="flex items-start gap-2">
                     <span className="text-neutral-900">•</span>
-                    <span>Customized curriculum based on your skill level</span>
+                    <span>Plan personalizado segun tu nivel</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-neutral-900">•</span>
-                    <span>Direct feedback on your artwork</span>
+                    <span>Retroalimentacion directa sobre tus obras</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-neutral-900">•</span>
-                    <span>Flexible scheduling to fit your needs</span>
+                    <span>Horarios flexibles segun tus necesidades</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-neutral-900">•</span>
-                    <span>Portfolio development guidance</span>
+                    <span>Asesoria para desarrollar tu portafolio</span>
                   </li>
                 </ul>
                 <p className="text-amber-700 font-medium">
-                  Limited slots available • Applications reviewed monthly
+                  Cupos limitados • Solicitudes revisadas cada mes
                 </p>
               </div>
               <Button
@@ -350,7 +349,7 @@ export function Contact() {
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }
               >
-                Request Mentoring
+                Solicitar Mentoria
               </Button>
             </motion.div>
           </div>
@@ -361,10 +360,10 @@ export function Contact() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl mb-6 font-light text-neutral-900">
-            Have Questions?
+            Tienes Preguntas?
           </h2>
           <p className="text-neutral-600 mb-8">
-            Check out our frequently asked questions or browse available courses
+            Revisa nuestras preguntas frecuentes o explora los cursos disponibles
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -373,14 +372,14 @@ export function Contact() {
               size="lg"
               className="border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
             >
-              <Link to="/courses">View All Courses</Link>
+              <Link to="/courses">Ver Todos los Cursos</Link>
             </Button>
             <Button
               asChild
               size="lg"
               className="bg-neutral-900 hover:bg-neutral-800"
             >
-              <Link to="/">Return Home</Link>
+              <Link to="/">Volver al Inicio</Link>
             </Button>
           </div>
         </div>

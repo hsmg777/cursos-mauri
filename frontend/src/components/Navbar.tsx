@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+  const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +24,12 @@ export function Navbar() {
   }, [location]);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Courses", path: "/courses" },
-    { name: "Contact", path: "/contact" },
+    { name: t("navbar.home"), path: "/" },
+    { name: t("navbar.courses"), path: "/courses" },
+    { name: t("navbar.contact"), path: "/contact" },
   ];
+
+  const currentLang = i18n.language.startsWith("en") ? "EN" : "ES";
 
   return (
     <nav
@@ -40,6 +45,7 @@ export function Navbar() {
           <Link
             to="/"
             className="inline-flex items-center"
+            onClick={scrollToTop}
           >
             <img
               src="/images/logo.png"
@@ -54,6 +60,7 @@ export function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={scrollToTop}
                 className={`text-sm tracking-wide transition-colors ${
                   location.pathname === link.path
                     ? "text-neutral-900"
@@ -65,9 +72,18 @@ export function Navbar() {
             ))}
             
             {/* Language Selector */}
-            <div className="flex items-center space-x-1 text-sm text-neutral-600 cursor-pointer hover:text-neutral-900 transition-colors">
-              <span>EN</span>
-              <ChevronDown className="w-3 h-3" />
+            <div className="flex items-center gap-2 text-sm text-neutral-600">
+              <div className="relative">
+                <select
+                  value={currentLang}
+                  onChange={(e) => i18n.changeLanguage(e.target.value.toLowerCase())}
+                  className="appearance-none bg-transparent border border-neutral-300 rounded-md pl-3 pr-8 py-1 text-neutral-900"
+                >
+                  <option value="ES">ES</option>
+                  <option value="EN">EN</option>
+                </select>
+                <ChevronDown className="w-3 h-3 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-600" />
+              </div>
             </div>
 
             <Button
@@ -75,7 +91,7 @@ export function Navbar() {
               variant="default"
               className="bg-neutral-900 hover:bg-neutral-800 text-white px-6 transition-all"
             >
-              <Link to="/courses">View Courses</Link>
+              <Link to="/courses" onClick={scrollToTop}>{t("navbar.viewCourses")}</Link>
             </Button>
           </div>
 
@@ -101,6 +117,7 @@ export function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={scrollToTop}
                 className={`block text-lg ${
                   location.pathname === link.path
                     ? "text-neutral-900"
@@ -112,11 +129,21 @@ export function Navbar() {
             ))}
             <div className="pt-4 space-y-3">
               <Button asChild variant="default" className="w-full bg-neutral-900 hover:bg-neutral-800">
-                <Link to="/courses">View Courses</Link>
+                <Link to="/courses" onClick={scrollToTop}>{t("navbar.viewCourses")}</Link>
               </Button>
               <div className="flex items-center justify-center space-x-2 text-sm text-neutral-600">
-                <span>Language:</span>
-                <span className="font-medium">EN</span>
+                <span>{t("navbar.language")}:</span>
+                <div className="relative">
+                  <select
+                    value={currentLang}
+                    onChange={(e) => i18n.changeLanguage(e.target.value.toLowerCase())}
+                    className="appearance-none bg-transparent border border-neutral-300 rounded-md pl-3 pr-8 py-1 text-neutral-900"
+                  >
+                    <option value="ES">ES</option>
+                    <option value="EN">EN</option>
+                  </select>
+                  <ChevronDown className="w-3 h-3 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-600" />
+                </div>
               </div>
             </div>
           </div>

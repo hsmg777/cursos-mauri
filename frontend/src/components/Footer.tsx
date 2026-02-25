@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Facebook } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200">
@@ -21,34 +23,33 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Master watercolor painting through professional guidance and
-              structured courses.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:pl-24">
             <h3 className="text-sm tracking-wide mb-4 text-neutral-900">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <div className="space-y-2">
               <Link
                 to="/"
                 className="block text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
               >
-                Home
+                {t("navbar.home")}
               </Link>
               <Link
                 to="/courses"
                 className="block text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
               >
-                Courses
+                {t("navbar.courses")}
               </Link>
               <Link
                 to="/contact"
                 className="block text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
               >
-                Contact
+                {t("navbar.contact")}
               </Link>
             </div>
           </div>
@@ -56,7 +57,7 @@ export function Footer() {
           {/* Social Media */}
           <div>
             <h3 className="text-sm tracking-wide mb-4 text-neutral-900">
-              Follow Me
+              {t("footer.followMe")}
             </h3>
             <div className="flex space-x-4">
               <a
@@ -86,7 +87,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-neutral-200 space-y-4">
           <p className="text-sm text-neutral-500 text-center">
-            © {currentYear} Mauri Virtanen. All rights reserved.
+            © {currentYear} Mauri Virtanen. {t("footer.rights")}
           </p>
           <a
             href="https://nivusoftware.com/"
@@ -99,8 +100,8 @@ export function Footer() {
               alt="Nivusoftware"
               className="h-4 w-auto"
             />
-            <span>
-              Desarrollado por <strong>Nivusoftware</strong>
+            <span className="mt-0.5">
+              {t("footer.developedBy")} <strong>Nivusoftware</strong>
             </span>
           </a>
         </div>

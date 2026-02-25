@@ -4,48 +4,49 @@ import { Card, CardContent } from "../components/ui/card";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { HomeHero } from "../components/HomeHero";
+import { FourSteps } from "../components/FourSteps";
 
 const featuredCourses = [
   {
     id: 1,
-    title: "Watercolor Foundations",
-    description: "Master the essential techniques and materials for watercolor painting from the ground up.",
+    title: "Fundamentos de Acuarela",
+    description: "Domina las tecnicas y materiales esenciales para pintar en acuarela desde cero.",
     price: "$129",
     image: "https://images.unsplash.com/photo-1690743300963-c09faf1d06f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwY29sb3IlMjBwYWxldHRlJTIwYnJ1c2hlc3xlbnwxfHx8fDE3NzA2NTUzMjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    level: "Beginner",
+    level: "Principiante",
   },
   {
     id: 2,
-    title: "Landscape Painting Masterclass",
-    description: "Learn to capture stunning landscapes with depth, atmosphere, and professional techniques.",
+    title: "Masterclass de Paisajes",
+    description: "Aprende a capturar paisajes impactantes con profundidad, atmosfera y tecnicas profesionales.",
     price: "$179",
     image: "https://images.unsplash.com/photo-1685013640715-8701bbaa2207?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwbGFuZHNjYXBlJTIwcGFpbnRpbmclMjBuYXR1cmV8ZW58MXx8fHwxNzcwNjU1MzIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    level: "Intermediate",
+    level: "Intermedio",
   },
   {
     id: 3,
-    title: "Light & Shadow in Watercolor",
-    description: "Discover advanced techniques for creating dramatic lighting effects in your artwork.",
+    title: "Luz y Sombra en Acuarela",
+    description: "Descubre tecnicas avanzadas para crear efectos dramaticos de iluminacion en tus obras.",
     price: "$149",
     image: "https://images.unsplash.com/photo-1579167728798-a1cf3d595960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwZmxvd2VycyUyMGJvdGFuaWNhbCUyMHBhaW50aW5nfGVufDF8fHx8MTc3MDY1NTMyMXww&ixlib=rb-4.1.0&q=80&w=1080",
-    level: "Intermediate",
+    level: "Intermedio",
   },
 ];
 
 const liveWorkshops = [
   {
     id: 1,
-    title: "Spring Nature Workshop",
-    date: "March 15, 2026",
-    seats: "8 seats remaining",
+    title: "Taller de Naturaleza en Primavera",
+    date: "15 de marzo de 2026",
+    seats: "8 cupos disponibles",
     price: "$89",
     image: "https://images.unsplash.com/photo-1579167728798-a1cf3d595960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwZmxvd2VycyUyMGJvdGFuaWNhbCUyMHBhaW50aW5nfGVufDF8fHx8MTc3MDY1NTMyMXww&ixlib=rb-4.1.0&q=80&w=1080",
   },
   {
     id: 2,
-    title: "Urban Sketching Intensive",
-    date: "April 8, 2026",
-    seats: "5 seats remaining",
+    title: "Intensivo de Sketching Urbano",
+    date: "8 de abril de 2026",
+    seats: "5 cupos disponibles",
     price: "$99",
     image: "https://images.unsplash.com/photo-1763496974013-389a355aae2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlcmNvbG9yJTIwdXJiYW4lMjBjaXR5c2NhcGUlMjBza2V0Y2h8ZW58MXx8fHwxNzcwNjU1MzIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
   },
@@ -55,23 +56,23 @@ const testimonials = [
   {
     id: 1,
     name: "Sarah Anderson",
-    country: "United States",
+    country: "Estados Unidos",
     rating: 5,
-    text: "Mauri's teaching style is both inspiring and clear. I went from complete beginner to confidently creating my own watercolor pieces in just a few months.",
+    text: "El estilo de ensenanza de Mauri es inspirador y claro. Pase de cero a crear mis propias piezas con seguridad en pocos meses.",
   },
   {
     id: 2,
     name: "Carlos Mendez",
-    country: "Spain",
+    country: "Espana",
     rating: 5,
-    text: "The structured approach and professional feedback transformed my painting. The courses are worth every penny.",
+    text: "El enfoque estructurado y la retroalimentacion profesional transformaron mi pintura. Los cursos valen cada centavo.",
   },
   {
     id: 3,
     name: "Emma Laurent",
-    country: "France",
+    country: "Francia",
     rating: 5,
-    text: "Beautiful, comprehensive lessons with a perfect balance of technique and creative freedom. Highly recommended!",
+    text: "Lecciones completas y hermosas, con el equilibrio perfecto entre tecnica y libertad creativa. Muy recomendado.",
   },
 ];
 
@@ -84,26 +85,27 @@ export function Home() {
       <section className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl mb-8 font-light text-neutral-900">
-            A Unique Artistic Journey
+            Un viaje artístico único
           </h2>
           <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-            With years of experience in watercolor painting, my goal is to teach
-            you not only technique, but also artistic confidence and creative
-            freedom.
+            Lecciones para quienes quieren aprender a controlar la luz y las emociones en sus obras <br />
+            Imagina plasmar nuestro mundo a traves de tus ojos en cada pincelada.
           </p>
           <div className="w-32 h-0.5 bg-neutral-300 mx-auto" />
         </div>
       </section>
+
+      <FourSteps />
 
       {/* Featured Courses Preview */}
       <section className="py-20 px-4 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
-              Featured Courses
+              Cursos Destacados
             </h2>
             <p className="text-lg text-neutral-600">
-              Start your watercolor journey with our most popular courses
+              Comienza tu camino en la acuarela con nuestros cursos mas populares
             </p>
           </div>
 
@@ -143,7 +145,7 @@ export function Home() {
                         variant="outline"
                         className="border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
                       >
-                        <Link to="/courses">View Details</Link>
+                        <Link to="/courses">Ver Detalles</Link>
                       </Button>
                     </div>
                   </CardContent>
@@ -158,7 +160,7 @@ export function Home() {
               size="lg"
               className="bg-neutral-900 hover:bg-neutral-800"
             >
-              <Link to="/courses">See All Courses</Link>
+              <Link to="/courses">Ver Todos los Cursos</Link>
             </Button>
           </div>
         </div>
@@ -169,11 +171,11 @@ export function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
-              Live Workshops & Personal Guidance
+              Talleres en Vivo y Acompanamiento Personal
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Join intimate live sessions for real-time feedback and personal
-              instruction. Limited seats available.
+              Unete a sesiones en vivo con feedback en tiempo real e instruccion
+              personalizada. Cupos limitados.
             </p>
           </div>
 
@@ -197,7 +199,7 @@ export function Home() {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="px-3 py-1 bg-neutral-900 text-white text-xs rounded-full">
-                        LIVE
+                        EN VIVO
                       </div>
                       <span className="text-sm text-neutral-500">
                         {workshop.date}
@@ -214,7 +216,7 @@ export function Home() {
                         {workshop.price}
                       </span>
                       <Button className="bg-neutral-900 hover:bg-neutral-800">
-                        Reserve Spot
+                        Reservar Cupo
                       </Button>
                     </div>
                   </CardContent>
@@ -225,7 +227,7 @@ export function Home() {
 
           <div className="text-center">
             <p className="text-neutral-600 italic">
-              Limited seats available for personalized attention
+              Cupos limitados para una atencion personalizada
             </p>
           </div>
         </div>
@@ -236,7 +238,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
-              What Students Say
+              Lo Que Dicen Nuestros Estudiantes
             </h2>
           </div>
 
@@ -303,24 +305,23 @@ export function Home() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl mb-6 font-light text-neutral-900">
-                Meet the Artist
+                Conoce a la Artista
               </h2>
               <div className="space-y-4 text-neutral-600 leading-relaxed mb-8">
                 <p>
-                  With over 15 years of professional experience in watercolor
-                  painting and art education, I've dedicated my career to helping
-                  artists of all levels discover their unique creative voice.
+                  Con mas de 15 anos de experiencia profesional en acuarela y
+                  educacion artistica, he dedicado mi carrera a ayudar a
+                  artistas de todos los niveles a descubrir su voz creativa.
                 </p>
                 <p>
-                  My teaching philosophy centers on building strong technical
-                  foundations while nurturing individual artistic expression. Each
-                  course is carefully structured to provide both comprehensive
-                  instruction and the freedom to explore your own creative path.
+                  Mi filosofia de ensenanza se centra en construir bases
+                  tecnicas solidas mientras se potencia la expresion artistica
+                  individual. Cada curso esta cuidadosamente estructurado.
                 </p>
                 <p>
-                  Whether you're picking up a brush for the first time or looking
-                  to refine advanced techniques, I'm here to guide you through
-                  structured courses and personalized coaching.
+                  Ya sea que tomes un pincel por primera vez o quieras perfeccionar
+                  tecnicas avanzadas, estoy aqui para guiarte con cursos
+                  estructurados y acompanamiento personalizado.
                 </p>
               </div>
               <Button
@@ -329,7 +330,7 @@ export function Home() {
                 variant="outline"
                 className="border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
               >
-                <Link to="/contact">Contact for Private Mentoring</Link>
+                <Link to="/contact">Contacto para Mentoria Privada</Link>
               </Button>
             </motion.div>
           </div>
@@ -349,10 +350,10 @@ export function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-light">
-            Start Painting With Confidence Today
+            Empieza a Pintar con Confianza Hoy
           </h2>
           <p className="text-lg md:text-xl mb-10 text-white/90 max-w-2xl mx-auto">
-            Join hundreds of students who have transformed their artistic skills
+            Unete a cientos de estudiantes que transformaron sus habilidades artisticas
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -360,7 +361,7 @@ export function Home() {
               size="lg"
               className="bg-white text-neutral-900 hover:bg-neutral-100 text-base px-8"
             >
-              <Link to="/courses">Browse Courses</Link>
+              <Link to="/courses">Explorar Cursos</Link>
             </Button>
             <Button
               asChild
@@ -368,7 +369,7 @@ export function Home() {
               variant="outline"
               className="border-white text-white hover:bg-white/10 text-base px-8"
             >
-              <Link to="/courses">Enroll in a Live Class</Link>
+              <Link to="/courses">Inscribirme a una Clase en Vivo</Link>
             </Button>
           </div>
         </div>
