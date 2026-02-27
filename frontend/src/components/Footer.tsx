@@ -7,19 +7,19 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="border-t border-neutral-200 bg-neutral-50">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-8 grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
           {/* Brand */}
           <div>
             <Link
               to="/"
-              className="inline-flex items-center mb-4 -mt-2"
+              className="mb-4 inline-flex items-center md:-mt-2"
             >
               <img
                 src="/images/logo.png"
                 alt="Logo"
-                className="h-24 w-auto"
+                className="h-20 w-auto sm:h-24"
               />
             </Link>
             <p className="text-sm text-neutral-600 leading-relaxed">
@@ -59,7 +59,7 @@ export function Footer() {
             <h3 className="text-sm tracking-wide mb-4 text-neutral-900">
               {t("footer.followMe")}
             </h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4 md:justify-start">
               <a
                 href="#"
                 className="text-neutral-600 hover:text-neutral-900 transition-colors"
@@ -85,8 +85,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-neutral-200 space-y-4">
-          <p className="text-sm text-neutral-500 text-center">
+        <div className="space-y-4 border-t border-neutral-200 pt-8 text-center">
+          <p className="text-center text-sm text-neutral-500">
             © {currentYear} Mauri Virtanen. {t("footer.rights")}
           </p>
           <a

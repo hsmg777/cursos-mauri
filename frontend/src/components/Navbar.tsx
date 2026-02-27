@@ -5,19 +5,10 @@ import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { t, i18n } = useTranslation();
   const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -32,15 +23,9 @@ export function Navbar() {
   const currentLang = i18n.language.startsWith("en") ? "EN" : "ES";
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
           <Link
             to="/"
@@ -50,7 +35,7 @@ export function Navbar() {
             <img
               src="/images/logo.png"
               alt="Logo"
-              className="h-44 w-auto"
+              className="h-24 w-auto sm:h-36"
             />
           </Link>
 
@@ -97,8 +82,9 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-neutral-900"
+            className="md:hidden inline-flex h-11 w-11 items-center justify-center text-neutral-900"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />

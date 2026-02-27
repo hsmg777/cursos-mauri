@@ -78,17 +78,17 @@ const testimonials = [
 
 export function Home() {
   return (
-    <div className="bg-white">
+    <div className="overflow-x-hidden bg-white">
       <HomeHero />
 
       {/* Trust / Brand Statement Section */}
-      <section className="py-24 px-4">
+      <section className="px-4 py-16 sm:px-6 sm:py-24">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl mb-8 font-light text-neutral-900">
+          <h2 className="mb-6 text-3xl font-light text-neutral-900 sm:mb-8 sm:text-4xl md:text-5xl">
             Un viaje artístico único
           </h2>
-          <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-            Lecciones para quienes quieren aprender a controlar la luz y las emociones en sus obras <br />
+          <p className="mb-8 text-base leading-relaxed text-neutral-600 sm:text-lg">
+            Lecciones para quienes quieren aprender a controlar la luz y las emociones en sus obras <br className="hidden sm:block" />
             Imagina plasmar nuestro mundo a traves de tus ojos en cada pincelada.
           </p>
           <div className="w-32 h-0.5 bg-neutral-300 mx-auto" />
@@ -98,18 +98,18 @@ export function Home() {
       <FourSteps />
 
       {/* Featured Courses Preview */}
-      <section className="py-20 px-4 bg-neutral-50">
+      <section className="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
+          <div className="mb-12 text-center sm:mb-16">
+            <h2 className="mb-4 text-3xl font-light text-neutral-900 sm:text-4xl md:text-5xl">
               Cursos Destacados
             </h2>
-            <p className="text-lg text-neutral-600">
+            <p className="mx-auto max-w-2xl text-base text-neutral-600 sm:text-lg">
               Comienza tu camino en la acuarela con nuestros cursos mas populares
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="mb-10 grid grid-cols-1 gap-6 sm:mb-12 md:grid-cols-3 md:gap-8">
             {featuredCourses.map((course, index) => (
               <motion.div
                 key={course.id}
@@ -118,7 +118,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-neutral-200 h-full">
+                <Card className="h-full overflow-hidden border-neutral-200 transition-shadow duration-300 hover:shadow-xl">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={course.image}
@@ -126,24 +126,24 @@ export function Home() {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-5 sm:p-6">
                     <div className="text-xs text-neutral-500 mb-2 tracking-wider uppercase">
                       {course.level}
                     </div>
-                    <h3 className="text-xl mb-3 text-neutral-900">
+                    <h3 className="mb-3 text-lg text-neutral-900 sm:text-xl">
                       {course.title}
                     </h3>
                     <p className="text-neutral-600 mb-4 text-sm leading-relaxed">
                       {course.description}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <span className="text-2xl text-neutral-900">
                         {course.price}
                       </span>
                       <Button
                         asChild
                         variant="outline"
-                        className="border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
+                        className="w-full border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white sm:w-auto"
                       >
                         <Link to="/courses">Ver Detalles</Link>
                       </Button>
@@ -158,7 +158,7 @@ export function Home() {
             <Button
               asChild
               size="lg"
-              className="bg-neutral-900 hover:bg-neutral-800"
+              className="w-full bg-neutral-900 hover:bg-neutral-800 sm:w-auto"
             >
               <Link to="/courses">Ver Todos los Cursos</Link>
             </Button>
@@ -167,19 +167,19 @@ export function Home() {
       </section>
 
       {/* Live Classes / Workshops Section */}
-      <section className="py-20 px-4">
+      <section className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
+          <div className="mb-12 text-center sm:mb-16">
+            <h2 className="mb-4 text-3xl font-light text-neutral-900 sm:text-4xl md:text-5xl">
               Talleres en Vivo y Acompanamiento Personal
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-base text-neutral-600 sm:text-lg">
               Unete a sesiones en vivo con feedback en tiempo real e instruccion
               personalizada. Cupos limitados.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             {liveWorkshops.map((workshop, index) => (
               <motion.div
                 key={workshop.id}
@@ -188,7 +188,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-neutral-200">
+                <Card className="overflow-hidden border-neutral-200 transition-shadow duration-300 hover:shadow-xl">
                   <div className="aspect-[16/9] overflow-hidden">
                     <img
                       src={workshop.image}
@@ -196,8 +196,8 @@ export function Home() {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
+                  <CardContent className="p-5 sm:p-6">
+                    <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center">
                       <div className="px-3 py-1 bg-neutral-900 text-white text-xs rounded-full">
                         EN VIVO
                       </div>
@@ -205,17 +205,17 @@ export function Home() {
                         {workshop.date}
                       </span>
                     </div>
-                    <h3 className="text-2xl mb-2 text-neutral-900">
+                    <h3 className="mb-2 text-xl text-neutral-900 sm:text-2xl">
                       {workshop.title}
                     </h3>
                     <p className="text-sm text-amber-600 mb-4">
                       {workshop.seats}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <span className="text-2xl text-neutral-900">
                         {workshop.price}
                       </span>
-                      <Button className="bg-neutral-900 hover:bg-neutral-800">
+                      <Button className="w-full bg-neutral-900 hover:bg-neutral-800 sm:w-auto">
                         Reservar Cupo
                       </Button>
                     </div>
@@ -226,7 +226,7 @@ export function Home() {
           </div>
 
           <div className="text-center">
-            <p className="text-neutral-600 italic">
+            <p className="text-sm italic text-neutral-600 sm:text-base">
               Cupos limitados para una atencion personalizada
             </p>
           </div>
@@ -234,15 +234,15 @@ export function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-neutral-50">
+      <section className="bg-neutral-50 px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4 font-light text-neutral-900">
+          <div className="mb-12 text-center sm:mb-16">
+            <h2 className="mb-4 text-3xl font-light text-neutral-900 sm:text-4xl md:text-5xl">
               Lo Que Dicen Nuestros Estudiantes
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
@@ -252,7 +252,7 @@ export function Home() {
                 viewport={{ once: true }}
               >
                 <Card className="border-neutral-200 h-full">
-                  <CardContent className="p-6">
+                  <CardContent className="p-5 sm:p-6">
                     <div className="flex gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star
@@ -261,11 +261,11 @@ export function Home() {
                         />
                       ))}
                     </div>
-                    <p className="text-neutral-700 mb-6 leading-relaxed">
+                    <p className="mb-6 text-sm leading-relaxed text-neutral-700 sm:text-base">
                       "{testimonial.text}"
                     </p>
                     <div>
-                      <div className="text-neutral-900">
+                      <div className="text-sm text-neutral-900 sm:text-base">
                         {testimonial.name}
                       </div>
                       <div className="text-sm text-neutral-500">
@@ -281,15 +281,15 @@ export function Home() {
       </section>
 
       {/* About the Artist Section */}
-      <section className="py-20 px-4">
+      <section className="px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="aspect-[3/4] overflow-hidden"
+              className="aspect-[3/4] overflow-hidden rounded-2xl"
             >
               <img
                 src="https://images.unsplash.com/photo-1752649935095-ac8f23ec446b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc3QlMjBwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBhaW50aW5nfGVufDF8fHx8MTc3MDY1NTMyMXww&ixlib=rb-4.1.0&q=80&w=1080"
@@ -304,10 +304,10 @@ export function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl mb-6 font-light text-neutral-900">
+              <h2 className="mb-6 text-3xl font-light text-neutral-900 sm:text-4xl md:text-5xl">
                 Conoce a la Artista
               </h2>
-              <div className="space-y-4 text-neutral-600 leading-relaxed mb-8">
+              <div className="mb-8 space-y-4 text-sm leading-relaxed text-neutral-600 sm:text-base">
                 <p>
                   Con mas de 15 anos de experiencia profesional en acuarela y
                   educacion artistica, he dedicado mi carrera a ayudar a
@@ -328,7 +328,7 @@ export function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white"
+                className="w-full border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white sm:w-auto"
               >
                 <Link to="/contact">Contacto para Mentoria Privada</Link>
               </Button>
@@ -338,7 +338,7 @@ export function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
+      <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -348,18 +348,18 @@ export function Home() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 font-light">
+        <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
+          <h2 className="mb-6 text-3xl font-light sm:text-4xl md:text-5xl lg:text-6xl">
             Empieza a Pintar con Confianza Hoy
           </h2>
-          <p className="text-lg md:text-xl mb-10 text-white/90 max-w-2xl mx-auto">
+          <p className="mx-auto mb-10 max-w-2xl text-base text-white/90 sm:text-lg md:text-xl">
             Unete a cientos de estudiantes que transformaron sus habilidades artisticas
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mx-auto flex w-full max-w-md flex-col justify-center gap-4 sm:max-w-none sm:flex-row">
             <Button
               asChild
               size="lg"
-              className="bg-white text-neutral-900 hover:bg-neutral-100 text-base px-8"
+              className="w-full bg-white px-8 text-base text-neutral-900 hover:bg-neutral-100 sm:w-auto"
             >
               <Link to="/courses">Explorar Cursos</Link>
             </Button>
@@ -367,7 +367,7 @@ export function Home() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 text-base px-8"
+              className="w-full border-white px-8 text-base text-white hover:bg-white/10 sm:w-auto"
             >
               <Link to="/courses">Inscribirme a una Clase en Vivo</Link>
             </Button>

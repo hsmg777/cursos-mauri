@@ -17,6 +17,7 @@ const resources = {
           "Domina acuarela con cursos pregrabados y talleres en vivo, guiados paso a paso para principiantes y artistas avanzados.",
         explore: "Explorar Cursos",
         contact: "Contactame",
+        videoLabel: "Video principal del hero",
       },
       fourSteps: {
         badge: "Metodo 4 Steps",
@@ -54,6 +55,7 @@ const resources = {
           "Master watercolor with pre-recorded courses and live workshops, guided step by step for beginners and advanced artists.",
         explore: "Explore Courses",
         contact: "Contact Me",
+        videoLabel: "Hero background video",
       },
       fourSteps: {
         badge: "4 Steps Method",
